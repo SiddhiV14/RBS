@@ -1,0 +1,31 @@
+.back
+{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    width: 10%;
+    height: 20px;
+    margin: auto;
+    color:black; 
+}
+.back:hover ,.back:active
+{
+    background-color: white;
+}
+
+.bg
+{
+    text-align:center;
+    background-color:rgba(0, 0, 0, 0.308);
+   margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    color: white;
+    font-size: 20px;
+    
+
+}
