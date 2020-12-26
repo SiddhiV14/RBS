@@ -1,31 +1,49 @@
-.back
+body {
+    background-image: url("C:\Users\53363\ProjectWorkspace\RBS\RBS\webui\RBS-app\src\app\view-rates\Table6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: 750px;
+}
+#rate{
+    text-align: center;
+    color: white;
+}
+.bg
+{
+    background-color:rgba(0, 0, 0, 0.308);
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    -ms-transform: translateY(-30%);
+    transform: translateY(-30%);
+    width: fit-content;
+}
+
+#back
 {
     padding-top: 10px;
     padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 30px;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
     background-color:rgba(0, 0, 0, 0.11);
-    border-radius: 5px;
     width: 10%;
     height: 20px;
     margin: auto;
     color:black; 
+    border:3px solid white;
 }
-.back:hover ,.back:active
+#back:hover ,#back:active
 {
-    background-color: white;
+    background-color:rgba(117, 94, 94, 0.521);;
 }
-
-.bg
-{
-    text-align:center;
-    background-color:rgba(0, 0, 0, 0.308);
-   margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    color: white;
-    font-size: 20px;
-    
-
+a{
+    color:white;
+    text-decoration: none;
 }
