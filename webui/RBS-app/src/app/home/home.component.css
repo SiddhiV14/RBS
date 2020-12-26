@@ -1,0 +1,14 @@
+:host {
+    display:block;
+    border:10px solid burlywood;
+    background-image:url("C:\Users\53380\ProjectWorkplace\RBS\RBS\webui\RBS-app\src\assets\Images\hotel.jpg");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    height:850px;
+    width:100%;
+    background-blend-mode:light;
+}
