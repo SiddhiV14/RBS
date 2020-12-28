@@ -1,0 +1,88 @@
+<html>
+<body>
+  <br>
+<div style="text-align: center">
+    <h1>BOOKING DETAILS</h1>
+    </div>
+    <div class = "bg">
+    
+    <table border="1" align ="center">
+        <thead>
+    
+            <tr>
+            
+            <th>BookingId</th>
+            <th>GuestName</th>       
+            <th>ReservededSlot</th>
+            <th>BookedDate</th>       
+            <th>ReservedDate</th>      
+            <th>Total Amount</th>
+            <th>Cancel reservation</th>        
+            </tr>
+         </thead>
+         <tbody>
+              <tr>
+                <td>
+                    <h5>1</h5>
+                  </td>
+                <td>
+                    <h5>saikiran</h5>
+                  </td>
+                <td>
+                    <h5>7pm</h5>
+                  </td>
+                <td>
+                    <h5>28/12/2020</h5>
+                </td>
+                <td>
+                    <h5>30/12/2020</h5>
+                  </td>
+                <td>
+                    <h5>900</h5>
+                  </td>
+                <td >
+                <div *ngIf="(mydate | date:'yyyy-MM-dd')>(mindate | date:'yyyy-MM-dd');else feedback">
+                    <button (click)="myFunc()" type="button"  id="btn" >Cancel</button>
+                </div>
+                <div><ng-template #feedback>
+                    <a routerLink="/feedback">feedback</a>
+                </ng-template>
+            </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>1</h5>
+                  </td>
+                <td>
+                    <h5>saikiran</h5>
+                  </td>
+                <td>
+                    <h5>7pm</h5>
+                  </td>
+                <td>
+                    <h5>29/12/2020</h5>
+                </td>
+                <td>
+                    <h5>30/12/2020</h5>
+                  </td>
+                <td>
+                    <h5>900</h5>
+                  </td>
+                <td >
+                <div *ngIf="(midate | date:'yyyy-MM-dd')>(mindate | date:'yyyy-MM-dd');else feedback">
+                    <button (click)="myFunc()" type="button"  class="btn btn-danger" >Cancel</button>
+                </div>
+                <div><ng-template #feedback>
+                    <a routerLink="/feedback">feedback</a>
+                </ng-template>
+            </div>
+                </td>
+             </tr>
+         </tbody>  
+        </table>
+        </div>
+        <div class="back">
+            <a routerLink ="book">Back</a>
+        </div> 
+    

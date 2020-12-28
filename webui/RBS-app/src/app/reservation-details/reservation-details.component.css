@@ -1,0 +1,63 @@
+html,body{
+    background-image: url("bookdet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: 750px;
+}
+.bg
+{
+    background-color:rgba(0, 0, 0, 0.308);
+    color: white;
+    font-size: 20px;
+    margin: auto;
+    position: relative;
+    top: 5%;
+    -ms-transform: translateY(-30%);
+    transform: translateY(-30%);
+    width: fit-content;
+}
+div {
+margin-top: 15px;
+text-shadow: black 10px;
+}
+#btn {
+background-color: rgba(8, 1, 1, 0.034);
+color: black;
+font-weight: bold;
+
+padding: 10px 15px;
+font-size: 19px;
+border: none;
+opacity: 0.9;
+cursor: pointer;
+}
+#btn:hover ,#btn:active
+{
+background-color: rgb(119, 14, 14);
+}
+.back
+{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 30px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0.11);
+    width: 10%;
+    height: 20px;
+    margin: auto;
+    color:black; 
+    border:3px solid white;
+}
+.back:hover ,.back:active
+{
+background-color: rgb(202, 130, 130);
+}
+a{
+color: white;
+text-decoration: none;
+}
