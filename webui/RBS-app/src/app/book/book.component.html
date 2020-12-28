@@ -1,6 +1,14 @@
 <head><h2>Book here</h2></head>
       <br>
 <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <ul>
+    <li><a  routerLink="/home"  routerLinkActive="active">Home</a></li>
+    <li><a  routerLink="/rate"  routerLinkActive="active">View Rate</a></li>
+    <li><a routerLink="/book"  routerLinkActive="active">About</a></li>
+    <li><a routerLink="/contact"  routerLinkActive="active">Contact  Us</a></li>
+  </ul>
+
     <div class="back">
 <form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
     <label for="fname">NAME:</label>
@@ -26,4 +34,10 @@
   <a routerLink = "/home">Back</a>
   </div>
 <br>
+<div class="footer" style="text-align:center">
+<!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+</div>
 </body>
