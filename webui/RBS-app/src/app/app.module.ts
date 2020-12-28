@@ -10,11 +10,15 @@ import { ViewRatesComponent } from './view-rates/view-rates.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SuccessComponent } from './success/success.component';
 
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [{path:"rate", component:ViewRatesComponent},
-                      {path:"",redirectTo:"home",pathMatch:"full"},
+                      {path:"",redirectTo:"login",pathMatch:"full"},
                         {path:"home",component:HomeComponent},
+                        {path:"login",component:LoginComponent},
+                        {path:"signup",component:SignupComponent},
                         {path:"book",component:BookComponent},
                         {path:"success",component:SuccessComponent},
                         {path:"**",component:PagenotfoundComponent}]
@@ -27,7 +31,8 @@ const routes: Routes = [{path:"rate", component:ViewRatesComponent},
     ViewRatesComponent,
     PagenotfoundComponent,
     SuccessComponent,
-
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes)
