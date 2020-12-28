@@ -1,14 +1,132 @@
+body, html {
+  height: 100%;
+}
 :host {
     display:block;
-    border:10px solid burlywood;
-    background-image:url("hotel.jpg");
+    background-image:url("food.jpg");
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-    height:850px;
+    height:750px;
     width:100%;
     background-blend-mode:light;
+}
+h1 {
+  color: white; 
+  font-family: Arial, Helvetica, sans-serif;   
+  font-size: 250%;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  padding-right: 250px;
+}
+div.b {
+  text-align: center;
+  position: relative;
+  top: -60px;
+  right: -60px;
+}
+
+div.v{
+  position: relative;
+  top:-120px;
+  text-align: left;
+  font-size: 50px;
+  color: white;
+  font-style:italic;
+}
+
+button {
+  font-family: Arial;
+  background-color: hue;
+  border: none;
+  padding: 25px 25px;
+  
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  text-align: center;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa; 
+  cursor: auto;
+}
+
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.active {
+  background-color: #131413;
+}
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+#booking{
+  position: relative;
+  top: -300px;
+  right: -400px;
+}
+.footer{
+  position: relative;
+  top:-200px;
 }

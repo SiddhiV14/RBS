@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -8,15 +9,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class BookComponent implements OnInit {
   f:FormGroup;
-  result:any;
   mindate=new Date();
 
-  constructor() { }
+  constructor(private route :Router) { }
 
   ngOnInit() {
     this.f=new FormGroup({
-      fname:new FormControl(''),
-      pnumber:new FormControl(''),
       start_date:new FormControl(''),
       time:new FormControl(''),
       guests:new FormControl('')
@@ -24,10 +22,9 @@ export class BookComponent implements OnInit {
   }
 
   onSubmit(f:any) {
-    console.log(f.fname);
-    console.log(f.pnumber);
     console.log(f.start_date);
     console.log(f.time);
     console.log(f.guests);
+    this.route.navigate(["success"]);
 }
 }
