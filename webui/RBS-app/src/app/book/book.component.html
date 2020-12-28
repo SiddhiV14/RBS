@@ -11,10 +11,6 @@
 
     <div class="back">
 <form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
-    <label for="fname">NAME:</label>
-    <input type="text" id="fname" formControlName="fname"><br><br>
-    <label for="pnumber">MOBILE :</label>
-    <input type="text" id="pnumber" formControlName="pnumber"><br><br>
     <label for="start-date">DATE:</label>
     <input type="date" id="start-date" min="{{mindate | date:'yyyy-MM-dd'}}" formControlName="start_date" /><br><br>
     <label for="time">CHOOSE A TIME SLOT:</label>
@@ -28,7 +24,9 @@
      <input type="number" id="tentacles" formControlName="guests" min="1" max="50">
     <br><br>
     <input type="submit" id="btn" value="Book">
+    
     </form>
+    
 </div>
 <div id="back">
   <a routerLink = "/home">Back</a>

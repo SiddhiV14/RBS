@@ -9,15 +9,22 @@ import { HomeComponent } from './home/home.component';
 import { ViewRatesComponent } from './view-rates/view-rates.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
+import { SuccessComponent } from './success/success.component';
+
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [{path:"rate", component:ViewRatesComponent},
-                      {path:"",redirectTo:"home",pathMatch:"full"},
+                      {path:"",redirectTo:"login",pathMatch:"full"},
                         {path:"home",component:HomeComponent},
+                        {path:"login",component:LoginComponent},
+                        {path:"signup",component:SignupComponent},
                         {path:"book",component:BookComponent},
                         {path:"contact",component:ContactComponent},
-                        {path:"**",component:PagenotfoundComponent}
-                        ]
+                        {path:"**",component:PagenotfoundComponent},
+                        {path:"success",component:SuccessComponent}
+                       ]
 
 @NgModule({
   declarations: [
@@ -26,7 +33,10 @@ const routes: Routes = [{path:"rate", component:ViewRatesComponent},
     HomeComponent,
     ViewRatesComponent,
     PagenotfoundComponent,
-    ContactComponent
+    ContactComponent,
+    SuccessComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes)
