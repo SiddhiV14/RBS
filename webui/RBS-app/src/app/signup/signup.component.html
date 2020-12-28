@@ -1,0 +1,24 @@
+<div id="main">
+    <h1>Signup</h1>
+    <form [formGroup]="f" (ngSubmit)=onSubmit(f.value)>
+        <label for="fname">FIRST NAME:</label>
+        <input type="text" id="fname" formControlName="fname"><br><br>
+    
+        <label for="lname">LAST NAME:</label>
+        <input type="text" id="lname" formControlName="lname"><br><br>
+       
+        <label for="mno">MOBILE NO:</label>
+        <input type="text" id="mno" formControlName="mno"><br><br>
+       
+    
+        <label for="uname">USERNAME:</label>
+        <input type="text" id="uname" formControlName="uname"><br><br>
+    
+        <label for="pswd">PASSWORD:</label>
+        <input type="text" id="pswd" formControlName="pswd"><br><br>
+        <label for="pswd1">CONFIRM PASSWORD:</label>
+        <input type="text" id="pswd1" formControlName="pswd1"><br><br>
+
+        <input type="submit" id="btn" value="SignUp">
+    </form>
+</div>

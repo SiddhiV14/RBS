@@ -8,7 +8,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class BookComponent implements OnInit {
   f:FormGroup;
-  result:any;
   mindate=new Date();
 
   constructor() { }
