@@ -17,7 +17,8 @@ export class BookComponent implements OnInit {
     this.f=new FormGroup({
       start_date:new FormControl(''),
       time:new FormControl(''),
-      guests:new FormControl('')
+      guests:new FormControl(''),
+      no:new FormControl('')
     })
   }
 
@@ -25,6 +26,7 @@ export class BookComponent implements OnInit {
     console.log(f.start_date);
     console.log(f.time);
     console.log(f.guests);
+    console.log(f.no);
     this.route.navigate(["success"]);
 }
 }
