@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SuccessComponent } from './success/success.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [{path:"rate", component:ViewRatesComponent},
                         {path:"feedback",component:FeedbackComponent},
                         {path:"contact",component:ContactComponent},
                         {path:"success",component:SuccessComponent},
+                        {path:"about",component:AboutComponent},
                         {path:"**",component:PagenotfoundComponent}
                        ]
 
@@ -46,10 +48,11 @@ const routes: Routes = [{path:"rate", component:ViewRatesComponent},
     ContactComponent,
     SuccessComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AboutComponent
   ],
   imports: [
-    CommonModule,BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes)
+    CommonModule,BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), HttpClientModule
   ],
  
   
