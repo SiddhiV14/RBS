@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DetailsService } from '../details.service';
 
 @Component({
   selector: 'app-reservation-details',
@@ -9,21 +10,25 @@ import { Router } from '@angular/router';
 export class ReservationDetailsComponent implements OnInit {
   
 mindate=new Date;
-mydate= "2020-12-30";
-midate= "2020-12-20";
-  constructor(private router:Router) { }
+mydate= "2021-01-03";
+midate= "2020-12-31";
+detail: Object;
+  constructor(private router:Router, private details:DetailsService) { }
 
   ngOnInit() {
+    this.viewAllDetails();
 
   }
-  public myFunc() {
-    var txt:any;
-   if (confirm("Press a button!")) {
-     console.log(txt = "Your reservation will be cancelled");
-     this.router.navigate(['/home']);
-   } else {
-    console.log( txt = "You pressed Cancel!");
-   }
+ viewAllDetails() {
+  this.details.viewDetails().subscribe((response)=>{
+    this.detail = response
+  })
+ }
+
+ deleteUser(detail1) {
+   this.details.deleteUser(detail1).subscribe(()=>{
+     this.viewAllDetails();
+   })
  }
    
 }

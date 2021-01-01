@@ -18,27 +18,14 @@
                     <th>07:00pm</th>
                     <th>09:00pm</th>
                 </tr>
-                <tr>
+                <tr *ngFor="let r of rates">
                     <td>Veg(P)</td>
-                    <td>750/-</td>
-                    <td>750/-</td>
-                    <td>850/-</td>
-                    <td>850/-</td>
+                    <td>{{r.lunch1}}</td>
+                    <td>{{r.lunch2}}</td>
+                    <td>{{r.dinner1}}</td>
+                    <td>{{r.dinner2}}</td>
                 </tr>
-                <tr>
-                    <td>Non Veg(P)</td>
-                    <td>850/-</td>
-                    <td>850/-</td>
-                    <td>950/-</td>
-                    <td>950/-</td>
-                </tr>
-                <tr>
-                    <td>Kids(P)</td>
-                    <td>400/-</td>
-                    <td>400/-</td>
-                    <td>450/-</td>
-                    <td>450/-</td>
-                </tr>
+               
             </table>
             <br>
         <br>
