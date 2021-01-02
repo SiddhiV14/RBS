@@ -45,40 +45,11 @@
                     <button (click)="myFunc()" type="button"  id="btn" >Cancel</button>
                 </div>
                 <div><ng-template #feedback>
-                    <a routerLink="/feedback">feedback</a>
+                  <a routerLink="/feedback">feedback</a>
                 </ng-template>
             </div>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <h5>1</h5>
-                  </td>
-                <td>
-                    <h5>saikiran</h5>
-                  </td>
-                <td>
-                    <h5>7pm</h5>
-                  </td>
-                <td>
-                    <h5>29/12/2020</h5>
-                </td>
-                <td>
-                    <h5>30/12/2020</h5>
-                  </td>
-                <td>
-                    <h5>900</h5>
-                  </td>
-                <td >
-                <div *ngIf="(midate | date:'yyyy-MM-dd')>(mindate | date:'yyyy-MM-dd');else feedback">
-                    <button (click)="myFunc()" type="button"  class="btn btn-danger" >Cancel</button>
-                </div>
-                <div><ng-template #feedback>
-                    <a routerLink="/feedback">feedback</a>
-                </ng-template>
-            </div>
-                </td>
-             </tr>
          </tbody>  
         </table>
         </div>

@@ -21,9 +21,10 @@ import { SignupComponent } from './signup/signup.component';
 
 
 
-const routes: Routes = [{path:"rate", component:ViewRatesComponent},
-                      {path:"",redirectTo:"login",pathMatch:"full"},
+const routes: Routes = [
+                      {path:"",redirectTo:"home",pathMatch:"full"},
                         {path:"home",component:HomeComponent},
+                        {path:"rate", component:ViewRatesComponent},
                         {path:"login",component:LoginComponent},
                         {path:"signup",component:SignupComponent},
                         {path:"book",component:BookComponent},
