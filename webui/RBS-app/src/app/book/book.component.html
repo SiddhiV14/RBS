@@ -8,7 +8,38 @@
     <li><a routerLink="/book"  routerLinkActive="active">About</a></li>
     <li><a routerLink="/contact"  routerLinkActive="active">Contact  Us</a></li>
     <li><a routerLink="/details" routerLinkActive="active">Details</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
   </ul>
+
+  <div>
+    <h2>Availabe Tables</h2>
+    <table border="1" align ="left" class="capacity">
+      <tr>
+        <th>Table No</th>
+        <th>Capacity</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>3</td>
+      </tr>
+    </table> 
+  </div>
 
     <div class="back">
 <form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
@@ -24,6 +55,8 @@
      <label for="tentacles">Number of Guests</label>
      <input type="number" id="tentacles" formControlName="guests" min="1" max="50">
     <br><br>
+    <label for="no">SELECT AVAILABLE TABLE NO</label>
+    <input type="text" id="no" formControlName="no"><br><br>
     <input type="submit" id="btn" value="Book">
     
     </form>
