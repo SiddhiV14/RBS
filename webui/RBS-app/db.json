@@ -31,6 +31,70 @@
       "rdate": "15/12/2020"
     }
   ],
+  "book": [
+    {
+      "tableNo": "1"
+    },
+    {
+      "tableNo": "2"
+    },
+    {
+      "tableNo": "3"
+    }
+  ],
+  "bookings": [
+    {
+      "start_date": "2021-01-09",
+      "time": "03:00 PM",
+      "guests": 1,
+      "booking": "3",
+      "id": 1
+    },
+    {
+      "start_date": "2021-01-06",
+      "time": "03:00 PM",
+      "guests": 1,
+      "booking": "2",
+      "id": 2
+    },
+    {
+      "start_date": "2021-01-08",
+      "time": "12:00 PM",
+      "guests": 1,
+      "booking": "2",
+      "id": 3
+    }
+  ],
+  "feedbacks": [
+    {
+      "rating": "5",
+      "review": "gfch",
+      "id": 1
+    },
+    {
+      "rating": "5",
+      "review": "hbjdsbjh",
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "rating": "1",
+      "review": "hd s dasn ndskdas",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "bookId": "1",
+      "guestName": "Ruchi",
+      "rating": "5",
+      "review": "hbbdsahjsad",
+      "id": 6
+    }
+  ],
   "users": [
     {
       "uname": "Siddhi",

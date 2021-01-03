@@ -10,8 +10,6 @@ import { DetailsService } from '../details.service';
 export class ReservationDetailsComponent implements OnInit {
   
 mindate=new Date;
-mydate= "2021-01-03";
-midate= "2020-12-31";
 detail: Object;
   constructor(private router:Router, private details:DetailsService) { }
 
@@ -30,5 +28,10 @@ detail: Object;
      this.viewAllDetails();
    })
  }
+ feedbacks(detail2) {
+  localStorage.setItem("id",detail2.id);
+  localStorage.setItem("name",detail2.name);
+  this.router.navigate(["/feedback"]);
+}
    
 }
