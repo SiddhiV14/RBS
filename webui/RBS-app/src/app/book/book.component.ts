@@ -38,6 +38,7 @@ onYes(f:any) {
   console.log(f);
   this.view.Book(f).subscribe((response)=>{
     console.log("your table is booked");
+    this.route.navigate(["/success"])
 })
 }
 }

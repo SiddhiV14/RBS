@@ -1,18 +1,21 @@
 {
   "rates": [
     {
+      "type": "Veg(P)",
       "lunch1": "750/-",
       "lunch2": "750/-",
       "dinner1": "850/-",
       "dinner2": "850/-"
     },
     {
+      "type": "Non-Veg(P)",
       "lunch1": "850/-",
       "lunch2": "850/-",
       "dinner1": "950/-",
       "dinner2": "950/-"
     },
     {
+      "type": "Kids(P)",
       "lunch1": "400/-",
       "lunch2": "400/-",
       "dinner1": "450/-",
@@ -46,6 +49,20 @@
       "guests": 1,
       "booking": "3",
       "id": 1
+    },
+    {
+      "start_date": "2021-01-06",
+      "time": "03:00 PM",
+      "guests": 1,
+      "booking": "2",
+      "id": 2
+    },
+    {
+      "start_date": "2021-01-08",
+      "time": "12:00 PM",
+      "guests": 1,
+      "booking": "2",
+      "id": 3
     }
   ],
   "feedbacks": [
@@ -76,6 +93,49 @@
       "rating": "5",
       "review": "hbbdsahjsad",
       "id": 6
+    }
+  ],
+  "users": [
+    {
+      "uname": "Siddhi",
+      "pswd": "1234",
+      "id": 1
+    },
+    {
+      "uname": "",
+      "pswd": "",
+      "id": 2
+    },
+    {
+      "uname": "",
+      "pswd": "",
+      "id": 3
+    },
+    {
+      "uname": "",
+      "pswd": "",
+      "id": 4
+    },
+    {
+      "uname": "",
+      "pswd": "",
+      "id": 5
+    },
+    {
+      "uname": "",
+      "pswd": "",
+      "id": 6
+    }
+  ],
+  "signup": [
+    {
+      "fname": "Siddhi",
+      "lname": "Vyawahare",
+      "mno": "7894561230",
+      "uname": "Siddhi",
+      "pswd": "12334",
+      "pswd1": "",
+      "id": 1
     }
   ]
 }
