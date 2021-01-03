@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignupService } from '../signup.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   f:FormGroup;
 
-  constructor(private route :Router) { }
+  constructor(private route :Router,private signup:SignupService) { }
 
   ngOnInit(): void {
     this.f=new FormGroup({
@@ -30,7 +32,15 @@ export class SignupComponent implements OnInit {
     console.log(f.uname);
     console.log(f.pswd);
     console.log(f.pswd1);
+   
     this.route.navigate(["login"]);
   }
+  createNewUser(formObj){
+    console.log(this.f);
+   this.signup.createNewUser(formObj).subscribe((response)=>{
+     console.log("user has been added");
+   })
+   this.route.navigate(["login"]);
+ }
 
 }

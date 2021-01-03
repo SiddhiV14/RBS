@@ -3,12 +3,13 @@
 <div id="main">
     <h1>LOGIN</h1>
     <div id="main1">
-    <form [formGroup]="f" (ngSubmit)=onSubmit(f.value)>
+    <form [formGroup]="f">
     <label for="uname"><i><strong>USERNAME:</strong></i></label><br>
     <input type="text" id="uname" formControlName="uname"><br><br>
     <label for="pswd"><i><strong>PASSWORD:</strong></i></label><br>
     <input type="text" id="pswd" formControlName="pswd"><br><br>
-    <input type="submit" id="btn" value="LOGIN">
+    <!--input type="submit" id="btn" value="LOGIN"-->
+    <button type="button" id="btn" (click)="createUser(f.value)">Login</button>
     </form><br>
     <p>Don't have an account?</p>
     <a  routerLink = "/signup"><b>SignUp Now</b></a>

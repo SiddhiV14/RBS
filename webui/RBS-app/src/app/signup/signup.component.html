@@ -3,7 +3,7 @@
 <div id="main">
     <h1>SIGNUP</h1>
     <div id="main1">
-    <form [formGroup]="f" (ngSubmit)=onSubmit(f.value)>
+    <form [formGroup]="f" >
         <label for="fname">FIRST NAME:</label><br>
         <input type="text" id="fname" formControlName="fname"><br><br>
     
@@ -19,7 +19,8 @@
     
         <label for="pswd">SET PASSWORD:</label><br>
         <input type="text" id="pswd" formControlName="pswd"><br><br>
-        <input type="submit" id="btn" value="SignUp">
+        <!--input type="submit" id="btn" value="SignUp"-->
+        <button type="button" id="btn" (click)="createNewUser(f.value)">SignUp</button>
     </form>
 </div>
 </div>

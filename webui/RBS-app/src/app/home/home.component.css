@@ -8,17 +8,17 @@ body {
 }
 
 
-div.b {
+h1 {
     text-align: center;
-    position: relative;
+   /* position: relative;*/
     top: -60px;
     right: -60px;
     color: white;
     padding-top:100px ;
   }
   
-  div.v{
-    position: relative;
+  #v{
+    /*position: relative;*/
     top:-120px;
     text-align: left;
     font-size: 50px;
@@ -54,8 +54,9 @@ button {
 #booking{
     position: relative;
     top: -300px;
-    right: -400px;
-  }
+    right: -1000px;
+    
+  } 
 li {
     float: left;
   }
@@ -82,6 +83,8 @@ li {
     width: 100%;
   }
   
+     
+    
 /* Style all font awesome icons */
 .fa {
     padding: 20px;

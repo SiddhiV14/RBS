@@ -1,18 +1,21 @@
 {
   "rates": [
     {
+      "type": "Veg(P)",
       "lunch1": "750/-",
       "lunch2": "750/-",
       "dinner1": "850/-",
       "dinner2": "850/-"
     },
     {
+      "type": "Non-Veg(P)",
       "lunch1": "850/-",
       "lunch2": "850/-",
       "dinner1": "950/-",
       "dinner2": "950/-"
     },
     {
+      "type": "Kids(P)",
       "lunch1": "400/-",
       "lunch2": "400/-",
       "dinner1": "450/-",
@@ -30,26 +33,45 @@
   ],
   "users": [
     {
+      "uname": "Siddhi",
+      "pswd": "1234",
       "id": 1
     },
     {
+      "uname": "",
+      "pswd": "",
       "id": 2
     },
     {
+      "uname": "",
+      "pswd": "",
       "id": 3
     },
     {
+      "uname": "",
+      "pswd": "",
       "id": 4
     },
     {
+      "uname": "",
+      "pswd": "",
       "id": 5
     },
     {
+      "uname": "",
+      "pswd": "",
       "id": 6
-    },
-    {
-      "id": 7
     }
   ],
-  "password": []
+  "signup": [
+    {
+      "fname": "Siddhi",
+      "lname": "Vyawahare",
+      "mno": "7894561230",
+      "uname": "Siddhi",
+      "pswd": "12334",
+      "pswd1": "",
+      "id": 1
+    }
+  ]
 }
