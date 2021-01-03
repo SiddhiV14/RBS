@@ -16,36 +16,32 @@
             <th>ReservededSlot</th>
             <th>BookedDate</th>       
             <th>ReservedDate</th>      
-            <th>Total Amount</th>
             <th>Cancel reservation</th>        
             </tr>
          </thead>
          <tbody>
-              <tr>
+              <tr *ngFor="let d of detail">
                 <td>
-                    <h5>1</h5>
+                    <h5>{{d.id}}</h5>
                   </td>
                 <td>
-                    <h5>saikiran</h5>
+                    <h5>{{d.name}}</h5>
                   </td>
                 <td>
-                    <h5>7pm</h5>
+                    <h5>{{d.rslot}}</h5>
                   </td>
                 <td>
-                    <h5>28/12/2020</h5>
+                    <h5>{{d.bdate}}</h5>
                 </td>
                 <td>
-                    <h5>30/12/2020</h5>
-                  </td>
-                <td>
-                    <h5>900</h5>
-                  </td>
+                    <h5>{{d.rdate}}</h5>
+                </td>
                 <td >
                 <div *ngIf="(mydate | date:'yyyy-MM-dd')>(mindate | date:'yyyy-MM-dd');else feedback">
-                    <button (click)="myFunc()" type="button"  id="btn" >Cancel</button>
+                    <button (click)="deleteUser(d)" type="button"  id="btn" >Cancel</button>
                 </div>
                 <div><ng-template #feedback>
-                  <a routerLink="/feedback">feedback</a>
+                  <button (click)="feedbacks(d)" type="button"  id="btn" >Feedback</button>
                 </ng-template>
             </div>
                 </td>

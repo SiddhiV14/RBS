@@ -1,0 +1,81 @@
+{
+  "rates": [
+    {
+      "lunch1": "750/-",
+      "lunch2": "750/-",
+      "dinner1": "850/-",
+      "dinner2": "850/-"
+    },
+    {
+      "lunch1": "850/-",
+      "lunch2": "850/-",
+      "dinner1": "950/-",
+      "dinner2": "950/-"
+    },
+    {
+      "lunch1": "400/-",
+      "lunch2": "400/-",
+      "dinner1": "450/-",
+      "dinner2": "450/-"
+    }
+  ],
+  "details": [
+    {
+      "id": "1",
+      "name": "Ruchi",
+      "rslot": "7pm",
+      "bdate": "12/12/2020",
+      "rdate": "15/12/2020"
+    }
+  ],
+  "book": [
+    {
+      "tableNo": "1"
+    },
+    {
+      "tableNo": "2"
+    },
+    {
+      "tableNo": "3"
+    }
+  ],
+  "bookings": [
+    {
+      "start_date": "2021-01-09",
+      "time": "03:00 PM",
+      "guests": 1,
+      "booking": "3",
+      "id": 1
+    }
+  ],
+  "feedbacks": [
+    {
+      "rating": "5",
+      "review": "gfch",
+      "id": 1
+    },
+    {
+      "rating": "5",
+      "review": "hbjdsbjh",
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "rating": "1",
+      "review": "hd s dasn ndskdas",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "bookId": "1",
+      "guestName": "Ruchi",
+      "rating": "5",
+      "review": "hbbdsahjsad",
+      "id": 6
+    }
+  ]
+}

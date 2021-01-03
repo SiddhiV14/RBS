@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { FeedbackService } from '../feedback.service';
+import { Feedback } from './Feedback'
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  f:FormGroup;
+  fd:Feedback;
+  constructor(private feedback :FeedbackService) { }
 
   ngOnInit(): void {
+    this.f=new FormGroup({
+      rating:new FormControl(''),
+      review:new FormControl('')
+    })
   }
+  onSubmit(f:any) {
+    console.log(f.rating);
+    console.log(f.review);
+    var id=localStorage.getItem("id");
+    var name=localStorage.getItem("name");
 
+    this.fd = new Feedback(id,name,f.rating,f.review)
+    console.log(name);
+    console.log(id);
+    this.feedback.feedbacks(this.fd).subscribe((response)=>{
+      console.log("your feedback is submitted");
+  })
+}
 }

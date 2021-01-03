@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DetailsService } from '../details.service';
 
 @Component({
   selector: 'app-reservation-details',
@@ -9,20 +10,28 @@ import { Router } from '@angular/router';
 export class ReservationDetailsComponent implements OnInit {
   
 mindate=new Date;
-mydate="2020-01-03";
-  constructor(private router:Router) { }
+detail: Object;
+  constructor(private router:Router, private details:DetailsService) { }
 
   ngOnInit() {
+    this.viewAllDetails();
 
   }
-  public myFunc() {
-    var txt:any;
-   if (confirm("DO you want to cancel your reservation ?")) {
-     console.log(txt = "Your reservation is cancelled");
-     this.router.navigate(['/home']);
-   } else {
-    console.log( txt = "You pressed Cancel!");
-   }
+ viewAllDetails() {
+  this.details.viewDetails().subscribe((response)=>{
+    this.detail = response
+  })
  }
+
+ deleteUser(detail1) {
+   this.details.deleteUser(detail1).subscribe(()=>{
+     this.viewAllDetails();
+   })
+ }
+ feedbacks(detail2) {
+  localStorage.setItem("id",detail2.id);
+  localStorage.setItem("name",detail2.name);
+  this.router.navigate(["/feedback"]);
+}
    
 }
