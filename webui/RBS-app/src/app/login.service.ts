@@ -8,7 +8,7 @@ export class LoginService {
 
   constructor(private _http:HttpClient) { }
 
-  createUser(user) {
-    return this._http.post("http://localhost:3000/users",user);
+  createUser(username:String, password:String) {
+    return this._http.get("http://localhost:8080/login/"+username+"/"+password);
   }
 }

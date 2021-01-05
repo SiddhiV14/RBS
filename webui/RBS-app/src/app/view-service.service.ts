@@ -9,6 +9,6 @@ export class ViewServiceService {
   constructor(private _http:HttpClient) { }
 
   viewRates() {
-    return this._http.get("http://localhost:3000/rates");
+    return this._http.get("http://localhost:8080/rates");
   }
 }

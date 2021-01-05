@@ -10,24 +10,33 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
   f:FormGroup;
-
+  msg:any;
 
   constructor(private route :Router,private login:LoginService) { }
 
   ngOnInit(): void {
     this.f=new FormGroup({
-      uname:new FormControl(''),
-      pswd:new FormControl(''),      
+      username:new FormControl(''),
+      password:new FormControl(''),      
     })
   }
-  onSubmit() {
-  }
-  createUser(formObj){
-     console.log(this.f);
-    this.login.createUser(formObj).subscribe((response)=>{
-      console.log("user has been added");
+  createUser(f:any){
+     console.log(f.username);
+     console.log(f.password);
+    this.login.createUser(f.username, f.password).subscribe((response)=>{
+      this.msg = response
+      console.log(this.msg);
+      if(this.msg==null) {
+        this.route.navigate(["login"]);
+      } else {
+        this.route.navigate(["home"]);
+      }
+    },
+    (error)=>{
+      this.msg=JSON.stringify(error);
+      console.log(this.msg);
     })
-    this.route.navigate(["home"]);
+    
   }
  
 }
