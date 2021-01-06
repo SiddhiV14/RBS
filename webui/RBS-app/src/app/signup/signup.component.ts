@@ -11,7 +11,7 @@ import { SignupService } from '../signup.service';
 })
 export class SignupComponent implements OnInit {
   f:FormGroup;
-
+  result:any;
   constructor(private route :Router,private signup:SignupService) { }
 
   ngOnInit(): void {
@@ -27,9 +27,15 @@ export class SignupComponent implements OnInit {
   createNewUser(formObj){
     console.log(this.f);
    this.signup.createNewUser(formObj).subscribe((response)=>{
-     console.log("user has been added"+JSON.stringify(response));
+     this.result = response;
+     if(this.result==null) {
+       alert("username exists");
+     } else {
+      alert("Registered Successfully");
+      this.route.navigate(["login"]);
+     }
    })
-   this.route.navigate(["login"]);
+   
  }
 
 }
