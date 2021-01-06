@@ -11,36 +11,31 @@ import { SignupService } from '../signup.service';
 })
 export class SignupComponent implements OnInit {
   f:FormGroup;
-
+  result:any;
   constructor(private route :Router,private signup:SignupService) { }
 
   ngOnInit(): void {
     this.f=new FormGroup({
       fname:new FormControl(''),
       lname:new FormControl(''),
-      mno:new FormControl(''),
-      uname:new FormControl(''),
-      pswd:new FormControl(''),
-      pswd1:new FormControl('')
+      mobile_no:new FormControl(''),
+      username:new FormControl(''),
+      password:new FormControl('')
     })
   }
 
-  onSubmit(f:any) {
-    console.log(f.fname);
-    console.log(f.lname);
-    console.log(f.mno);
-    console.log(f.uname);
-    console.log(f.pswd);
-    console.log(f.pswd1);
-   
-    this.route.navigate(["login"]);
-  }
   createNewUser(formObj){
     console.log(this.f);
    this.signup.createNewUser(formObj).subscribe((response)=>{
-     console.log("user has been added");
+     this.result = response;
+     if(this.result==null) {
+       alert("username exists");
+     } else {
+      alert("Registered Successfully");
+      this.route.navigate(["login"]);
+     }
    })
-   this.route.navigate(["login"]);
+   
  }
 
 }

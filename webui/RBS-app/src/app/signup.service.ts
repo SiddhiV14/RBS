@@ -9,6 +9,6 @@ export class SignupService {
   constructor(private _http:HttpClient) { }
 
   createNewUser(signup){
-    return this._http.post("http://localhost:3000/signup",signup);
+    return this._http.post("http://localhost:8080/register",signup);
   }
 }

@@ -8,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   myimg:string ="assets/images/hotel.jpg";
-
+  name:String;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.name = localStorage.getItem("uname");
   }
 
 }

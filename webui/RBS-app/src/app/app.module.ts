@@ -23,11 +23,11 @@ import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
-                      {path:"",redirectTo:"home",pathMatch:"full"},
+                      {path:"",redirectTo:"login",pathMatch:"full"},
                         {path:"home",component:HomeComponent},
-                        {path:"rate", component:ViewRatesComponent},
+                        {path:"rates", component:ViewRatesComponent},
                         {path:"login",component:LoginComponent},
-                        {path:"signup",component:SignupComponent},
+                        {path:"register",component:SignupComponent},
                         {path:"book",component:BookComponent},
                         {path:"details",component:ReservationDetailsComponent},
                         {path:"feedback",component:FeedbackComponent},

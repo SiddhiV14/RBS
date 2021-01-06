@@ -4,17 +4,17 @@
     <h1>LOGIN</h1>
     <div id="main1">
     <form [formGroup]="f">
-    <label for="uname"><i><strong>USERNAME:</strong></i></label><br>
-    <input type="text" id="uname" formControlName="uname"><br><br>
-    <label for="pswd"><i><strong>PASSWORD:</strong></i></label><br>
-    <input type="text" id="pswd" formControlName="pswd"><br><br>
-    <!--input type="submit" id="btn" value="LOGIN"-->
+    <label for="username"><i><strong>USERNAME:</strong></i></label><br>
+    <input type="text" id="username" formControlName="username"><br><br>
+    <label for="password"><i><strong>PASSWORD:</strong></i></label><br>
+    <input type="text" id="password" formControlName="password"><br><br>
     <button type="button" id="btn" (click)="createUser(f.value)">Login</button>
     </form><br>
     <p>Don't have an account?</p>
-    <a  routerLink = "/signup"><b>SignUp Now</b></a>
+    <a  routerLink = "/register"><b>SignUp Now</b></a>
     </div>
    
+    
 </div>
 </body>
 </html>
