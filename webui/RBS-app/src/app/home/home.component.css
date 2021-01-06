@@ -7,6 +7,10 @@ body {
     height: 750px;
 }
 
+h2 {
+  text-align: center;
+  color: white;
+}
 
 h1 {
     text-align: center;
