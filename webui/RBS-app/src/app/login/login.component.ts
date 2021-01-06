@@ -21,14 +21,12 @@ export class LoginComponent implements OnInit {
     })
   }
   createUser(f:any){
-     console.log(f.username);
-     console.log(f.password);
     this.login.createUser(f.username, f.password).subscribe((response)=>{
-      this.msg = response
-      console.log(this.msg);
+      this.msg = JSON.parse(JSON.stringify(response)).fname;
       if(this.msg==null) {
         this.route.navigate(["login"]);
       } else {
+        localStorage.setItem("uname", this.msg);
         this.route.navigate(["home"]);
       }
     },
