@@ -1,0 +1,17 @@
+
+.intro{
+    position :relative;
+     right:-790;
+     color:white;
+     background-color:rgb(52, 53, 60);
+      width: 470px;
+      height:550px;
+      padding: 50px;
+      top:-20;
+    }
+    body{
+    background:url('aboutpage.jpg');
+    background-repeat: no-repeat; 
+    background-size:800px 780px;
+    
+    }
