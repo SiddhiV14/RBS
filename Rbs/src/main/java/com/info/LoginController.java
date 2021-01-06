@@ -24,15 +24,22 @@ public class LoginController {
 	@Autowired
 	LoginRepository lrepo;
 	
-//	@RequestMapping("/login")
-//	public List<Login> getAllUser() {
-//		List<Login> login = service.getAllUsers();
-//		return login;
-//	}
 	
 	@PostMapping("/register")
 	public Login insertData(@RequestBody Login login) {
-		return service.insert(login);
+		Login lg = null;
+		int check =0;
+		String n = login.getUsername();
+		List<Login> users = service.getAllUsers();
+		for (Login l : users) {
+			 if(l.getUsername().equals(n)) {
+				 check = check+1;
+			}
+		} 
+		if(check<1) {
+			lg = service.insert(login);
+		}
+		return lg;
 		
 	}
 	
