@@ -8,13 +8,18 @@ import { DetailsService } from '../details.service';
   styleUrls: ['./reservation-details.component.css']
 })
 export class ReservationDetailsComponent implements OnInit {
-  
+ name:String; 
 mindate=new Date;
 detail: Object;
   constructor(private router:Router, private details:DetailsService) { }
 
   ngOnInit() {
     this.viewAllDetails();
+    this.name = localStorage.getItem("uname");
+    if(this.name==null) {
+      alert("please login first");
+      this.router.navigate(["login"]);
+    }
 
   }
  viewAllDetails() {

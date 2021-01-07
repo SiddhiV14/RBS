@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FeedbackService } from '../feedback.service';
 import { Feedback } from './Feedback'
 
@@ -12,13 +13,19 @@ export class FeedbackComponent implements OnInit {
 
   f:FormGroup;
   fd:Feedback;
-  constructor(private feedback :FeedbackService) { }
+  name:string;
+  constructor(private feedback :FeedbackService, private route :Router) { }
 
   ngOnInit(): void {
     this.f=new FormGroup({
       rating:new FormControl(''),
       review:new FormControl('')
     })
+    this.name = localStorage.getItem("uname");
+    if(this.name==null) {
+      alert("please login first");
+      this.route.navigate(["login"]);
+    }
   }
   onSubmit(f:any) {
     console.log(f.rating);
