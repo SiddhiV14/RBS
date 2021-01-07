@@ -8,7 +8,7 @@
         <li><a routerLink="/about"  routerLinkActive="active">About</a></li>
         <li><a routerLink="/contact"  routerLinkActive="active">Contact  Us</a></li>
         <li><a routerLink="/details" routerLinkActive="active">Booking Details</a></li>
-        <li><a routerLink="/login" routerLinkActive="active">Logout</a></li>
+        <li><button routerLink="/login" (click)="submit()" routerLinkActive="active">Logout</button></li>
       </ul>
     </div>
    
@@ -30,7 +30,7 @@
       <br>
       <br>
       <div id="booking">
-        <button  routerLink="/book"  routerLinkActive="active">Reserve Table</button>
+        <button id="btn" routerLink="/book"  routerLinkActive="active">Reserve Table</button>
         </div>
         <br>
       <div class="footer">

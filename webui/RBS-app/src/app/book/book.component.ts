@@ -12,7 +12,7 @@ export class BookComponent implements OnInit {
   f:FormGroup;
   mindate=new Date();
   book:Object;
-
+  name:String;
   constructor(private route :Router, private view : BookService) { }
 
   ngOnInit() {
@@ -22,6 +22,11 @@ export class BookComponent implements OnInit {
       guests:new FormControl(''),
       booking:new FormControl('')
     })
+    this.name = localStorage.getItem("uname");
+    if(this.name==null) {
+      alert("please login first");
+      this.route.navigate(["login"]);
+    }
   }
 
   onSubmit(f:any) {
