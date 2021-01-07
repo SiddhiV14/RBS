@@ -10,38 +10,54 @@ import { BookService } from '../book.service';
 })
 export class BookComponent implements OnInit {
   f:FormGroup;
-  mindate=new Date();
   book:Object;
   name:String;
+  mindate=new Date();
+  b:any;
+  gname:String;
+  gmobile:String;
+  obj:Object;
+  b1:any;
+
   constructor(private route :Router, private view : BookService) { }
 
   ngOnInit() {
     this.f=new FormGroup({
-      start_date:new FormControl(''),
-      time:new FormControl(''),
-      guests:new FormControl(''),
-      booking:new FormControl('')
+      reservationDate:new FormControl(''),
+      slotTime:new FormControl(''),
+      noOfGuests:new FormControl(''),
+      tNo:new FormControl('')
     })
-    this.name = localStorage.getItem("uname");
-    if(this.name==null) {
-      alert("please login first");
-      this.route.navigate(["login"]);
-    }
   }
 
   onSubmit(f:any) {
-    console.log(f.start_date);
-    console.log(f.time);
+    console.log(f.BOOKED_DATE);
+    console.log(f.SLOT_TIME);   
     console.log(f.guests);
-    this.view.availability().subscribe((response)=>{
+    this.view.availability(f.reservationDate,f.slotTime).subscribe((response)=>{
       this.book = response
-      console.log(this.book);    
+     console.log(this.book);          
     })
 }
 onYes(f:any) {
-  console.log(f.booking);
-  console.log(f);
-  this.view.Book(f).subscribe((response)=>{
+  //console.log(f.booking);
+  //console.log(f);
+  this.gname  = localStorage.getItem("uname");
+  this.gmobile = localStorage.getItem("mobileNo");
+  console.log(this.gmobile);
+  this.obj  = {
+    guestName:this.gname,
+    guestMobileNumber:this.gmobile,
+    reservationDate:f.reservationDate,
+    slotTime:f.slotTime,
+    noOfGuests:f.noOfGuests,
+    tableNo:f.tNo
+
+  }
+  this.b = JSON.stringify(this.obj);
+  this.b1 = JSON.parse(this.b);
+  console.log(this.b1);
+  this.view.Book(this.b1).subscribe((response)=>{
     console.log("your table is booked");
     this.route.navigate(["/success"])
 })

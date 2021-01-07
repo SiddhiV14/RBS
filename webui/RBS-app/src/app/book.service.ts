@@ -8,10 +8,10 @@ export class BookService {
 
   constructor(private _http:HttpClient) { }
 
-  availability() {
-    return this._http.get("http://localhost:3000/book");
+  availability(BOOKED_DATE:String,SLOT_TIME:String) {
+    return this._http.get("http://localhost:8080/b/"+BOOKED_DATE+"/"+SLOT_TIME);
   }
   Book(user) {
-    return this._http.post("http://localhost:3000/bookings",user);
+    return this._http.post("http://localhost:8080/booking",user);
   }
 }
