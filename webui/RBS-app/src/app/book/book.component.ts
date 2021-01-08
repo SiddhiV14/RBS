@@ -10,17 +10,25 @@ import { BookService } from '../book.service';
 })
 export class BookComponent implements OnInit {
   f:FormGroup;
-  mindate=new Date();
-  book:Object;
+  book:any;
   name:String;
+  mindate=new Date();
+  b:any;
+  gname:String;
+  gmobile:String;
+  obj:Object;
+  b1:any;
+  msg:String;
+  date= new Date();
+
   constructor(private route :Router, private view : BookService) { }
 
   ngOnInit() {
     this.f=new FormGroup({
-      start_date:new FormControl(''),
-      time:new FormControl(''),
-      guests:new FormControl(''),
-      booking:new FormControl('')
+      reservationDate:new FormControl(''),
+      slotTime:new FormControl(''),
+      noOfGuests:new FormControl(''),
+      tNo:new FormControl('')
     })
     this.name = localStorage.getItem("uname");
     if(this.name==null) {
@@ -28,20 +36,39 @@ export class BookComponent implements OnInit {
       this.route.navigate(["login"]);
     }
   }
+  isEmptyObject(f) {
+    return (f && (Object.keys(f).length === 0));
+  }
 
   onSubmit(f:any) {
-    console.log(f.start_date);
-    console.log(f.time);
-    console.log(f.guests);
-    this.view.availability().subscribe((response)=>{
-      this.book = response
-      console.log(this.book);    
+    this.view.availability(f.reservationDate,f.slotTime).subscribe((response)=>{
+      this.book = response;
+     if(this.book==null){
+      alert("No");
+      console.log("Hi");
+     }
     })
 }
 onYes(f:any) {
-  console.log(f.booking);
-  console.log(f);
-  this.view.Book(f).subscribe((response)=>{
+  //console.log(f.booking);
+  //console.log(f);
+  this.gname  = localStorage.getItem("username");
+  this.gmobile = localStorage.getItem("mobileNo");
+  console.log(this.gmobile);
+  this.obj  = {
+    guestName:this.gname,
+    guestMobileNumber:this.gmobile,
+    bookedDate:this.date,
+    reservationDate:f.reservationDate,
+    slotTime:f.slotTime,
+    noOfGuests:f.noOfGuests,
+    tableNo:f.tNo
+
+  }
+  this.b = JSON.stringify(this.obj);
+  this.b1 = JSON.parse(this.b);
+  console.log(this.b1);
+  this.view.Book(this.b1).subscribe((response)=>{
     console.log("your table is booked");
     this.route.navigate(["/success"])
 })
