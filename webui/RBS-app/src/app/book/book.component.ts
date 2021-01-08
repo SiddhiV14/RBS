@@ -10,7 +10,7 @@ import { BookService } from '../book.service';
 })
 export class BookComponent implements OnInit {
   f:FormGroup;
-  book:Object;
+  book:any;
   name:String;
   mindate=new Date();
   b:any;
@@ -18,6 +18,8 @@ export class BookComponent implements OnInit {
   gmobile:String;
   obj:Object;
   b1:any;
+  msg:String;
+  date= new Date();
 
   constructor(private route :Router, private view : BookService) { }
 
@@ -28,26 +30,35 @@ export class BookComponent implements OnInit {
       noOfGuests:new FormControl(''),
       tNo:new FormControl('')
     })
+    this.name = localStorage.getItem("uname");
+    if(this.name==null) {
+      alert("please login first");
+      this.route.navigate(["login"]);
+    }
+  }
+  isEmptyObject(f) {
+    return (f && (Object.keys(f).length === 0));
   }
 
   onSubmit(f:any) {
-    console.log(f.BOOKED_DATE);
-    console.log(f.SLOT_TIME);   
-    console.log(f.guests);
     this.view.availability(f.reservationDate,f.slotTime).subscribe((response)=>{
-      this.book = response
-     console.log(this.book);          
+      this.book = response;
+     if(this.book==null){
+      alert("No");
+      console.log("Hi");
+     }
     })
 }
 onYes(f:any) {
   //console.log(f.booking);
   //console.log(f);
-  this.gname  = localStorage.getItem("uname");
+  this.gname  = localStorage.getItem("username");
   this.gmobile = localStorage.getItem("mobileNo");
   console.log(this.gmobile);
   this.obj  = {
     guestName:this.gname,
     guestMobileNumber:this.gmobile,
+    bookedDate:this.date,
     reservationDate:f.reservationDate,
     slotTime:f.slotTime,
     noOfGuests:f.noOfGuests,

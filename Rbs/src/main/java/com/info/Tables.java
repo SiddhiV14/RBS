@@ -8,6 +8,14 @@ public class Tables {
 	@Id
 	private int tNo;
 	private int capacity;
+	/*private int t;
+	private String msg;
+	public Tables(int t,String msg) {
+		this.t=t;
+		this.msg=msg;
+		
+	}*/
+	
 	public Tables() {
 		
 	}

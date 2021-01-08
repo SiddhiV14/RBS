@@ -19,6 +19,13 @@ public class BookingService {
     	repo.save(book);
     	return book;
     	}
+	public void delete(int booking_id)
+	  {
+	   Optional<Booking> s= repo.findById(booking_id);
+	   if(s.isPresent()) {
+	    repo.deleteById(booking_id);
+	   }
+	  }
 	
 	
 

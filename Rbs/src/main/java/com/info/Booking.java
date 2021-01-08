@@ -14,8 +14,8 @@ public class Booking {
 	private int bookingId;
 	private String UserName;
 	private String guestMobileNumber ;
-	@Transient
-	private Date bookedDate ;
+	/*@Transient*/
+	private String bookedDate ;
 	private String reservationDate ;
 	private String slotTime;
 	private int noOfGuests;
@@ -57,12 +57,12 @@ public void setGuestMobileNumber(String guestMobileNumber) {
 }
 
 
-public Date getBookedDate() {
+public String getBookedDate() {
 	return bookedDate;
 }
 
 
-public void setBookedDate(Date bookedDate) {
+public void setBookedDate(String bookedDate) {
 	this.bookedDate = bookedDate;
 }
 
@@ -107,7 +107,7 @@ public void setTableNo(int tableNo) {
 }
 
 
-public Booking(int bookingId, String UserName, String guestMobileNumber, Date bookedDate, String reservationDate,
+public Booking(int bookingId, String UserName, String guestMobileNumber, String bookedDate, String reservationDate,
 		String slotTime, int noOfGuests, int tableNo) {
 	super();
 	this.bookingId = bookingId;
