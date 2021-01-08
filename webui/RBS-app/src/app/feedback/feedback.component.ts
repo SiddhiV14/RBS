@@ -24,9 +24,8 @@ export class FeedbackComponent implements OnInit {
     console.log(f.rating);
     console.log(f.review);
     var id=localStorage.getItem("id");
-    var name=localStorage.getItem("name");
-
-    this.fd = new Feedback(id,name,f.rating,f.review)
+    var name=localStorage.getItem("username");
+    this.fd = new Feedback(id,f.rating,f.review,name);
     console.log(name);
     console.log(id);
     this.feedback.feedbacks(this.fd).subscribe((response)=>{

@@ -1,6 +1,6 @@
 
 .intro{
-    position :relative;
+    
      right:-790;
      color:white;
      background-color:rgb(52, 53, 60);
@@ -12,6 +12,14 @@
     body{
     background:url('aboutpage.jpg');
     background-repeat: no-repeat; 
-    background-size:800px 780px;
+    background-size:cover;
     
+    }
+
+    #back{
+      text-align: center;
+      font-size: larger;
+      top:-20;
+      left: -790;
+      font-weight:bold white;
     }

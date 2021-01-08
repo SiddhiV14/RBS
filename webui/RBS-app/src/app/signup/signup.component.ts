@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../signup.service';
 
@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
       fname:new FormControl(''),
       lname:new FormControl(''),
       mobile_no:new FormControl(''),
-      username:new FormControl(''),
+      username:new FormControl('', [ Validators.required ]),
       password:new FormControl('')
     })
   }

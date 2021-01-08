@@ -3,7 +3,8 @@ export class Feedback{
     guestName:any;
     rating:any;
     review:any;
-    constructor(bookId:any, guestName:any, rating:any, review:any){
+    constructor(bookId:any, rating:any, review:any, guestName:any){
+       
         this.bookId = bookId;
         this.guestName = guestName;
         this.rating = rating;

@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-body{
-  background: cyan;
-}
+
 *{
   margin: 0;
   padding: 0;
@@ -76,4 +74,16 @@ body{
 .stars #one:checked ~ .result:before{
   content: "I hate it 😠";
 }
-
+.w3review{
+  color:white;
+}
+body{
+  background:black;
+}
+button{
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    color:black; 
+    border:3px solid white; 
+}

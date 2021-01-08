@@ -9,7 +9,7 @@ import { DetailsService } from '../details.service';
 })
 export class ReservationDetailsComponent implements OnInit {
   
-mindate=new Date;
+mydate=new Date();
 detail: Object;
   constructor(private router:Router, private details:DetailsService) { }
 
