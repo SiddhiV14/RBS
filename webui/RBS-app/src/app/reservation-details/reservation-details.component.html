@@ -12,39 +12,57 @@
             <tr>
             
             <th>BookingId</th>
-            <th>GuestName</th>       
+            <th>Mobile Number</th>
+            <th>Booked Date</th>
+            <th>Reserved Date</th>
             <th>ReservededSlot</th>
-            <th>BookedDate</th>       
-            <th>ReservedDate</th>      
-            <th>Cancel reservation</th>        
+            <th>No Of Guests</th> 
+            <th>table No</th>
+            <th>UserName</th>   
+            
+                
+            
+              
+            <th>Hi there!!</th>   
             </tr>
          </thead>
          <tbody>
               <tr *ngFor="let d of detail">
                 <td>
-                    <h5>{{d.id}}</h5>
+                    <h5>{{d.bookingId}}</h5>
                   </td>
-                <td>
-                    <h5>{{d.name}}</h5>
+                  <td>
+                    <h5>{{d.guestMobileNumber}}</h5>
                   </td>
-                <td>
-                    <h5>{{d.rslot}}</h5>
+                  <td>
+                    <h5>{{d.bookedDate|date:'dd-MM-yyyy'}}</h5>
                   </td>
+                  <td>
+                    <h5>{{d.reservationDate|date:'dd-MM-yyyy'}}</h5>
+                  </td>
+                  <td>
+                  <h5>{{d.slotTime}}</h5>
+                  </td>
+                  <td>
+                    <h5>{{d.noOfGuests}}</h5>
+                  </td> 
                 <td>
-                    <h5>{{d.bdate}}</h5>
+                    <h5>{{d.tableNo}}</h5>
                 </td>
                 <td>
-                    <h5>{{d.rdate}}</h5>
+                  <h5>{{d.guestName}}</h5>
                 </td>
-                <td >
-                <div *ngIf="(mydate | date:'yyyy-MM-dd')>(mindate | date:'yyyy-MM-dd');else feedback">
-                    <button (click)="deleteUser(d)" type="button"  id="btn" >Cancel</button>
+                <td>
+ 
+                <div *ngIf="(d.reservationDate |date :'yyyy-MM-dd') > (mindate |date:'yyyy-MM-dd');else feedback">
+                  <button (click)="deleteUser(d)" type="button"  id="btn" >Cancel</button>
                 </div>
-                <div><ng-template #feedback>
-                  <button (click)="feedbacks(d)" type="button"  id="btn" >Feedback</button>
-                </ng-template>
-            </div>
-                </td>
+                <div>
+                  <ng-template #feedback>
+                  <button (click)="feedbacks(d)" type="button"  id="btn" >Feedback</button>  
+                </ng-template> 
+                </div>
+            </td>
             </tr>
          </tbody>  
         </table>
@@ -52,4 +70,3 @@
         <div class="back">
             <a routerLink ="/book">Back</a>
         </div> 
-    

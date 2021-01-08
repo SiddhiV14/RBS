@@ -43,25 +43,35 @@
 
     <div class="back">
 <form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
-    <label for="start-date">DATE:</label>
-    <input type="date" id="start-date" min="{{mindate | date:'yyyy-MM-dd'}}" formControlName="start_date" /><br><br>
-    <label for="time">CHOOSE A TIME SLOT:</label>
-  <select name="time" id="time" formControlName="time">
-    <option value="12:00 PM">12:00 PM</option>
-    <option value="03:00 PM">03:00 PM</option>
-    <option value="07:00 PM">07:00 PM</option>
-    <option value="09:00 PM">09:00 PM</option>
+    <label for="reservationDate">DATE:</label>
+    <input type="date" id="reservationDate" min="{{mindate | date:'yyyy-MM-dd'}}" formControlName="reservationDate" /><br><br>
+    <label for="slotTime">CHOOSE A TIME SLOT:</label>
+  <select name="slotTime" id="slotTime" formControlName="slotTime">
+    <option value="12:00">12:00 PM</option>
+    <option value="03:00">03:00 PM</option>
+    <option value="07:00">07:00 PM</option>
+    <option value="09:00">09:00 PM</option>
   </select><br><br> 
-     <label for="tentacles">Number of Guests :</label>
-     <input type="number" id="tentacles" formControlName="guests" min="1" max="50">
-    <br><br>
+    
     <button type="submit" id="btn1" value="submit">Check Availability</button>
     <br><br>
+    <label for="noOfGuests">Number of Guests :</label>
+    <input type="number" id="noOfGuests" formControlName="noOfGuests" min="1" max="10">
+   <br><br>  
+   <div *ngIf="isEmptyObject(book); else name" >
+    No Tables Available
+   </div> 
+   <ng-template #name>
+   <legend>Select Table:</legend>
     <li *ngFor = "let t of book">
-      <input type="radio" id="{{t.tableNo}}" formControlName="booking" value="{{t.tableNo}}">
-      <label  for="{{t.tableNo}}">{{t.tableNo}}</label>
-      </li>
+     <label  for="TABLE_NO">{{t.tNo}}</label>
+     <input type="radio" id="TABLE_NO" formControlName="tNo" value="{{t.tNo}}">
+    </li>
+  </ng-template>
+ 
+      <!--input type="text" id="TABLE_NO"/-->
       <br><br>
+      
       <button (click)="onYes(f.value)" type="button"  id="btn" >Book</button>
   </form>
     

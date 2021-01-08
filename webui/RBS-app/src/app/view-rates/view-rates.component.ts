@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ViewServiceService } from '../view-service.service';
 
 @Component({
@@ -8,10 +9,15 @@ import { ViewServiceService } from '../view-service.service';
 })
 export class ViewRatesComponent implements OnInit {
   rates: Object;
-
-  constructor(private view:ViewServiceService) { }
+name:String;
+  constructor(private view:ViewServiceService, private route :Router) { }
 
   ngOnInit(): void {
+    this.name = localStorage.getItem("uname");
+    if(this.name==null) {
+      alert("please login first");
+      this.route.navigate(["login"]);
+    }
     this.getRates();
   }
 

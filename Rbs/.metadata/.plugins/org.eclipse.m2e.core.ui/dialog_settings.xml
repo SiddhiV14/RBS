@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Hexaware\ProjectWorkspace\RBS\RBS\Rbs"/>
 			<item value="/Users/ruchisule/Desktop/projectWorkspace/RBS/Rbs"/>
 		</list>
 		<list key="projectNameTemplate">
