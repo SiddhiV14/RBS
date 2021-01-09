@@ -1,16 +1,16 @@
 package com.info;
 
-import java.sql.Date;
-
-
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+
 
 @Entity
 public class Booking {
 	@Id
+	@GeneratedValue
 	private int bookingId;
 	private String UserName;
 	private String guestMobileNumber ;
