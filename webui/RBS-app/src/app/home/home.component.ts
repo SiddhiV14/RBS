@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
       this.route.navigate(["login"]);
     }
   }
-
   submit():void {
     localStorage.removeItem("uname");
   }

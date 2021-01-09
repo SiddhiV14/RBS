@@ -13,6 +13,6 @@ export class DetailsService {
   }
  
   deleteUser(detail) {
-    return this._http.delete("http://localhost:8080/delete/" +detail.booking_id);
+    return this._http.delete("http://localhost:8080/delete/" +detail.bookingId);
   }
 }

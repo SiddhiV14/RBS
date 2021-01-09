@@ -36,7 +36,7 @@ detail: Object;
  }
 
  deleteUser(detail1) {
- console.log(detail1.username);
+ console.log(this.username1);
  this.details.deleteUser(detail1).subscribe(()=>{
  this.viewAllDetails();
  })
