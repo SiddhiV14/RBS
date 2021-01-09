@@ -1,8 +1,5 @@
 package com.info;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +19,9 @@ public class TablesController {
 	
 	 @GetMapping("/b/{bookedDate}/{slotTime}")
 	 public List<Tables> getAvaliableTable(@PathVariable String bookedDate, @PathVariable String slotTime)  {
-		// return repo.checkAvaliablity(new SimpleDateFormat("yyyy-MM-dd").parse(bookedDate), slotTime);
-			//return  repo.checkAvaliablity(bookedDate, slotTime);
+		
 		 List<Tables> t1 = repo.checkAvaliablity(bookedDate, slotTime);
-			if(t1.isEmpty()) {
-				System.out.println("Hi");
-				//return t;
-			}
+			
 			return t1;
 	 }
 
