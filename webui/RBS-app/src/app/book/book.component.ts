@@ -44,17 +44,13 @@ export class BookComponent implements OnInit {
     this.view.availability(f.reservationDate,f.slotTime).subscribe((response)=>{
       this.book = response;
      if(this.book==null){
-      alert("No");
-      console.log("Hi");
+      alert("No Tables available");
      }
     })
 }
 onYes(f:any) {
-  //console.log(f.booking);
-  //console.log(f);
   this.gname  = localStorage.getItem("username");
   this.gmobile = localStorage.getItem("mobileNo");
-  console.log(this.gmobile);
   this.obj  = {
     guestName:this.gname,
     guestMobileNumber:this.gmobile,
@@ -67,9 +63,7 @@ onYes(f:any) {
   }
   this.b = JSON.stringify(this.obj);
   this.b1 = JSON.parse(this.b);
-  console.log(this.b1);
   this.view.Book(this.b1).subscribe((response)=>{
-    console.log("your table is booked");
     this.route.navigate(["/success"])
 })
 }
