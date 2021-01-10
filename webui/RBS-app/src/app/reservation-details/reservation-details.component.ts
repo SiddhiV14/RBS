@@ -14,6 +14,7 @@ mindate=new Date();
 username1:any;
 name:String; 
 detail: Object;
+bookId:any;
 
 
  constructor(private router:Router, private details:DetailsService) { }
@@ -31,7 +32,10 @@ detail: Object;
  this.username1=localStorage.getItem("username");
  this.details.viewDetails(this.username1).subscribe((response)=>{
  this.detail = response; 
- console.log(this.username1);
+ this.bookId = JSON.parse(JSON.stringify(response)).bookingId;
+ localStorage.setItem("id",this.bookId);
+ console.log(this.bookId);
+ //console.log(this.detail);
  })
  }
 
@@ -42,8 +46,8 @@ detail: Object;
  })
  }
  feedbacks(detail2) {
- localStorage.setItem("id",detail2.booking_id);
- localStorage.setItem("name",detail2.name);
+ //localStorage.setItem("id",detail2.bookingId);
+ //localStorage.setItem("name",detail2.name);
  this.router.navigate(["/feedback"]);
 }
  

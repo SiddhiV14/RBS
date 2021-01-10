@@ -11,7 +11,7 @@ public class Feedback {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private int bookingId;
+	
 
 	private String username;
 	private int rating;
@@ -23,10 +23,10 @@ public class Feedback {
 	
 	
 
-	public Feedback(int id, int bookingId, String username, int rating, String review) {
+	public Feedback(int id, String username, int rating, String review) {
 		super();
 		this.id = id;
-		this.bookingId = bookingId;
+	
 		this.username = username;
 		this.rating = rating;
 		this.review = review;
@@ -36,19 +36,14 @@ public class Feedback {
 
 	@Override
 	public String toString() {
-		return "Feedback [id=" + id + ", bookingId=" + bookingId + ", username=" + username + ", rating=" + rating
+		return "Feedback [id=" + id + ", username=" + username + ", rating=" + rating
 				+ ", review=" + review + "]";
 	}
 
 
 
-	public int getBookingId() {
-		return bookingId;
-	}
-
-	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
-	}
+	
+	
 	public int getId() {
 		return id;
 	}

@@ -10,9 +10,9 @@ public class FeedbackService {
 	FeedbackRepository repo;
 	
 
-	public void insert(Feedback feedback) {
+	public Feedback insert(Feedback feedback) {
 		
-		 repo.save(feedback);
+		 return repo.save(feedback);
 	}
 
 	

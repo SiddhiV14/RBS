@@ -1,12 +1,12 @@
 export class Feedback{
-    bookId:number;
-    guestName:any;
+   
+    username:any;
     rating:any;
     review:any;
-    constructor(bookId:any, rating:any, review:any, guestName:any){
+    constructor( rating:any, review:any, username:any){
        
-        this.bookId = bookId;
-        this.guestName = guestName;
+       
+        this.username = username;
         this.rating = rating;
         this.review = review;
     }

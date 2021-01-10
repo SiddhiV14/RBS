@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-public class FeebackController {
+public class FeedbackController {
 
 	@Autowired
 	FeedbackService service;
 
     @PostMapping("/feedback")
-    public String insertData(@RequestBody Feedback feedback) {
-    	service.insert(feedback);
-        return "Data inserted";    
+    public Feedback insertData(@RequestBody Feedback feedback) {
+    	return service.insert(feedback);
+            
     }
 }
