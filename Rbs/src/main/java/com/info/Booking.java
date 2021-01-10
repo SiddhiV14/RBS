@@ -4,6 +4,7 @@ package com.info;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -13,6 +14,7 @@ public class Booking {
 	private int bookingId;
 	private String UserName;
 	private String guestMobileNumber ;
+	@Transient
 	private String bookedDate ;
 	private String reservationDate ;
 	private String slotTime;

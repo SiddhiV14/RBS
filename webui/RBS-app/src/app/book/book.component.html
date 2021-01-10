@@ -10,8 +10,26 @@
     <li><a routerLink="/details" routerLinkActive="active">Booking Details</a></li>
   </ul>
 
-  <div>
-    <h2>Availabe Tables</h2>
+    <div class="back">
+<form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
+    <label for="reservationDate">DATE:</label>
+    <input type="date" id="reservationDate" min="{{mindate | date:'yyyy-MM-dd'}}" formControlName="reservationDate" /><br><br>
+    <label for="slotTime">CHOOSE A TIME SLOT:</label>
+  <select name="slotTime" id="slotTime" formControlName="slotTime">
+    <option value="12:00">12:00 PM</option>
+    <option value="03:00">03:00 PM</option>
+    <option value="07:00">07:00 PM</option>
+    <option value="09:00">09:00 PM</option>
+  </select><br><br> 
+    
+    <button type="submit" id="btn1" value="submit">Check Availability</button>
+    <br><br>
+    <label for="noOfGuests">Number of Guests :</label>
+    <input type="number" id="noOfGuests" formControlName="noOfGuests" min="1" max="10">
+   
+   <div class="dropdown">
+   <button class="dropbtn">Available Tables</button>
+   <div class="dropdown-content">
     <table border="1" align ="left" class="capacity">
       <tr>
         <th>Table No</th>
@@ -38,25 +56,9 @@
         <td>3</td>
       </tr>
     </table> 
+    </div>
   </div>
-
-    <div class="back">
-<form [formGroup]="f" (ngSubmit)=onSubmit(f.value) class="container">
-    <label for="reservationDate">DATE:</label>
-    <input type="date" id="reservationDate" min="{{mindate | date:'yyyy-MM-dd'}}" formControlName="reservationDate" /><br><br>
-    <label for="slotTime">CHOOSE A TIME SLOT:</label>
-  <select name="slotTime" id="slotTime" formControlName="slotTime">
-    <option value="12:00">12:00 PM</option>
-    <option value="03:00">03:00 PM</option>
-    <option value="07:00">07:00 PM</option>
-    <option value="09:00">09:00 PM</option>
-  </select><br><br> 
-    
-    <button type="submit" id="btn1" value="submit">Check Availability</button>
-    <br><br>
-    <label for="noOfGuests">Number of Guests :</label>
-    <input type="number" id="noOfGuests" formControlName="noOfGuests" min="1" max="10">
-   <br><br>  
+<br><br>
    <div *ngIf="isEmptyObject(book); else name" >
     No Tables Available
    </div> 

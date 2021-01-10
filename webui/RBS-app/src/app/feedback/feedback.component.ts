@@ -30,13 +30,16 @@ export class FeedbackComponent implements OnInit {
   onSubmit(f:any) {
     console.log(f.rating);
     console.log(f.review);
-    var id=localStorage.getItem("id");
-    var name=localStorage.getItem("name");
-
-    this.fd = new Feedback(id,name,f.rating,f.review)
+    //var bookingId=localStorage.getItem("id");
+    var name=localStorage.getItem("username");
+    //console.log(id);
+    //console.log(name);
+    this.fd = new Feedback(f.rating,f.review,name);
     console.log(name);
-    console.log(id);
+    //console.log(bookingId);
     this.feedback.feedbacks(this.fd).subscribe((response)=>{
+      alert("Thank You!!!Your feedback is submitted");
+      this.route.navigate(["/home"]);
       console.log("your feedback is submitted");
   })
 }
