@@ -14,7 +14,6 @@ public class Booking {
 	private int bookingId;
 	private String UserName;
 	private String guestMobileNumber ;
-	@Transient
 	private String bookedDate ;
 	private String reservationDate ;
 	private String slotTime;

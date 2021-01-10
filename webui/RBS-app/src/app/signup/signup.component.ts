@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
   }
 
   createNewUser(formObj){
-    console.log(this.f);
    this.signup.createNewUser(formObj).subscribe((response)=>{
      this.result = response;
      if(this.result==null) {

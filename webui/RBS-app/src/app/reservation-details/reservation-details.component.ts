@@ -16,7 +16,6 @@ name:String;
 detail: Object;
 bookId:any;
 
-
  constructor(private router:Router, private details:DetailsService) { }
 
  ngOnInit() {
@@ -34,8 +33,6 @@ bookId:any;
  this.detail = response; 
  this.bookId = JSON.parse(JSON.stringify(response)).bookingId;
  localStorage.setItem("id",this.bookId);
- console.log(this.bookId);
- //console.log(this.detail);
  })
  }
 
@@ -46,8 +43,6 @@ bookId:any;
  })
  }
  feedbacks(detail2) {
- //localStorage.setItem("id",detail2.bookingId);
- //localStorage.setItem("name",detail2.name);
  this.router.navigate(["/feedback"]);
 }
  
